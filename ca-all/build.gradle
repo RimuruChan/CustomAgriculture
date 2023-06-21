@@ -1,0 +1,37 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+repositories {
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+}
+
+dependencies {
+    implementation project(':ca-1.7.10')
+    implementation project(':ca-1.12.2')
+    //noinspection VulnerableLibrariesLocal
+    compileOnly 'org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT'
+}
+
+processResources {
+    filter(ReplaceTokens, tokens: [version: project.parent.version])
+}
+
+
+shadowJar{
+    dependencies {
+        include(dependency(':ca-1.7.10'))
+        include(dependency(':ca-1.12.2'))
+    }
+}
+
+tasks.build.dependsOn tasks.shadowJar

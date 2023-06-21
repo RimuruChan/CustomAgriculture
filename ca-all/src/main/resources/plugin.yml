@@ -1,0 +1,14 @@
+name: CustomAgriculture
+version: @version@
+main: tech.rimuruchan.customagriculture.CustomAgriculture
+authors: [ RimuruChan ]
+description: 'Contact at RealSprite233@outlook.com'
+website: rimuruchan.tech
+commands:
+  getSeed:
+    permission: customagriculture.getseed
+    description: get Seed
+    usage: /getseed <seedName>
+permissions:
+  customagriculture.getseed:
+    default: op

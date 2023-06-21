@@ -1,0 +1,34 @@
+ca:
+  seed:
+    a: # /getseed a name和lore不要和别的参数完全一致
+      name: '&6随机种子1'
+      lore:
+        - '&a这个种子有魔法~'
+        - '&b随机种出许多植物~'
+      chance: #几率=设定数/总数
+        crops: 1
+        carrot: 1
+        potato: 1
+        beetroot: 1
+        pumpkin: 1
+        melon: 1
+    b:
+      name: '&6随机种子2'
+      lore:
+        - '&a这个种子有魔法~'
+        - '&b随机种出许多植物~'
+      chance: #删除的不参与随机
+        crops: 1
+        carrot: 1
+        potato: 1
+  time: #秒为单位, 一个阶段的生长时间
+    crops: 5 #7个阶段
+    carrot: 5 #7
+    potato: 5 #7
+    pumpkin: 5 #7
+    melon: 5 #7
+    beetroot: 5 #4
+    warts: 5 #4
+    cocoa: 5 #3
+
+

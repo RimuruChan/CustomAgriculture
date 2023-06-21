@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+
+group = 'tech.rimuruchan'
+version = '1.0-SNAPSHOT'
+
+subprojects {
+    apply plugin: 'java'
+
+    group = project.group
+    version = project.version
+
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    repositories {
+        mavenCentral()
+    }
+}
